@@ -1,0 +1,541 @@
+/*importert font*/
+@font-face{
+    src: url("font/NorseBold-2Kge.otf");
+    font-family: norse;
+ /*importert font*/ 
+}
+body{
+    background-color: gray;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+}
+/* Forskjellige tekst typer*/
+h1{
+    font-family: norse;
+    font-size: 100px;
+    color: white;
+}
+h2{
+    font-family: norse;
+    font-size: 40px;
+    color: white;
+    text-align: center;
+}
+p{
+    font-family: norse;
+    color: white;
+    font-size: 15px;
+}
+p1{
+    font-family: norse;
+    color: white;
+    font-size: 30px;
+}
+p3{
+    font-family: norse;
+    color: white;
+    background-color: gray;
+    font-size: 25px;
+    text-align: left;
+}
+p4{
+    font-family: norse;
+    color: black;
+    background-color: white;
+    font-size: 20px; 
+}
+p5{
+    font-family: norse;
+    color: white;
+    font-size: 20px; 
+    background-color: gray;
+}
+/*tekst som flyr inn på forsiden*/
+.fly-in-text {
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: fly-in 1s ease forwards;
+    border: solid;
+    border-color: white;
+    border-radius: 10px;
+}
+
+  @keyframes fly-in {
+    100% {
+      opacity: 1;
+      transform: translatex(0);
+    }
+  }
+/*tekst som flyr inn på forsiden*/
+
+.grid-container1{
+    background-image: url("bilder/vikings-banner2.png");
+     display: grid;
+    grid-template-columns: 33% 33% 33%;
+    padding: 5px;
+    border:solid 5px;
+    border-color: white;
+    text-align: center;
+    grid-gap: 10px;
+}
+.grid-container2{
+    display: grid;
+    grid-template-columns: 100%;
+    text-align: left;
+    padding: 5px;
+    grid-gap: 5px;
+    height: 135px;
+    grid-gap: 10px;
+}
+.itemen{
+    border:solid 5px;
+    border-color: white;  
+    border-radius: 10px;
+
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+.itemen:hover{
+    transform: translateY(-2px);
+}
+
+/*det under er button animasjon*/
+
+.btn{
+    border: 1px solid white;
+    background: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: norse;
+    color: white;
+    cursor: pointer;
+    margin: 5px;
+    transition: 0.5s;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    border: solid;
+    background-color: darkgray;
+}
+.btn1:hover,.btn2:hover,.btn3:hover{
+    color: white;
+}
+.btn::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: gray;
+    transition: 0.5s;
+}
+.btn::before{
+    bottom: 0;
+    border-radius: 50% 50% 0 0;
+}
+.bt::before{
+    height: 100%;
+}
+.btn:hover::before{
+    height: 180%;
+}
+/*det over er button animasjon*/
+.grid-container4{
+    background-image: url("bilder/vikings-banner-karakterer.png");
+     display: grid;
+    grid-template-columns: 33% 33% 33%;
+    padding: 5px;
+    border:solid 5px;
+    border-color: white;
+    text-align: center;
+}
+.grid-container5{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    padding: 5px;
+    text-align: center;
+    padding: 5px;
+    grid-gap: 5px;
+}
+/* Jeg er klar over at jeg kunne brukt "ID" i stede for å kalle alle itemsa forskjellige ting*/
+.tekst1{
+    border:solid 5px;
+    border-color: white; 
+    background-image: url("bilder/bjørn-jernside.jpg");
+    border-radius: 10px;
+
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+.tekst1:hover{
+    /*Kode som sier hva som skjer når musepekeren hoverer over grid-itemet*/
+    transform: translateY(-10px);
+}
+.tekst2{
+    border:solid 5px;
+    border-color: white; 
+    background-image: url("bilder/ragnar-lodbrok.jpg");
+    border-radius: 10px;
+
+    /* ting som sier hvordan animasjonen skal være*/
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+.tekst2:hover{
+    transform: translateY(-10px);
+}
+.tekst3{
+    border:solid 5px;
+    border-color: white; 
+    background-image: url("bilder/harrald-hårfagre.jpg");
+
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+.tekst3:hover{
+    transform: translateY(-10px);
+}
+.grid-container6{
+    background-image: url("bilder/historie-banner-redigert.png");
+     display: grid;
+    grid-template-columns: 33% 33% 33%;
+    padding: 5px;
+    border:solid 5px;
+    border-color: white;
+    text-align: center;
+}
+.grid-container7{
+    display: grid;
+    grid-template-columns: 33% 33% 33% ;
+    padding: 5px;
+    text-align: center;
+    grid-gap: 5px;
+}
+.tekst4{
+    border:solid 5px;
+    border-color: white; 
+    border-radius: 10px;
+
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+.tekst4:hover{
+    transform: scale(1.03);
+}
+
+.tekst5{
+    border:solid 5px;
+    border-color: white; 
+    border-radius: 10px;
+
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+.tekst5:hover{
+    /* Hover animasjon på grid items*/
+    transform: scale(1.03);
+}
+.tekst6{
+    border:solid 5px;
+    border-color: white; 
+    border-radius: 10px;
+
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+.tekst6:hover{
+    transform: scale(1.03);
+}
+
+.grid-container9{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    padding: 5px;
+    text-align: center;
+    padding: 5px;
+    grid-gap: 5px;
+}
+.tekst8{
+    border:solid 5px;
+    border-color: white; 
+    background-image: url("bilder/bjørn-jernside.jpg");
+    border-radius: 10px;
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+.tekst8:hover{
+    transform: translateY(-10px);
+}
+.tekst9{
+    border:solid 5px;
+    border-color: white; 
+    background-image: url("bilder/ragnar-lodbrok.jpg");
+    border-radius: 10px;
+
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+.tekst9:hover{
+    transform: translateY(-10px);
+}
+.tekst10{
+    border:solid 5px;
+    border-color: white; 
+    background-image: url("bilder/harrald-hårfagre.jpg"); 
+    border-radius: 10px;
+
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+.tekst10:hover{
+    transform: translateY(-10px);
+}
+.grid-container10{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 5px;
+    text-align: center;
+    padding: 5px;
+    grid-gap: 5px;
+}
+.tekst11{
+    border:solid 5px;
+    border-color: white; 
+    background-image: url("bilder/bjørn-jernside.jpg");
+    border-radius: 10px;
+
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    height: 500px;
+}
+.tekst11:hover{
+    transform: scale(1.03);
+}
+.tekst12{
+    border:solid 5px;
+    border-color: white; 
+    background-image: url("bilder/ragnar-lodbrok.jpg");
+    border-radius: 10px;
+
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    height: 500px;
+}
+.tekst12:hover{
+    transform: scale(1.03);
+}
+.grid-container8{
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    text-align: center;
+    border: solid;
+    border-color: white;
+    background-image: url("bilder/harrald-hårfagre.jpg");
+    height: 1200px;
+    grid-gap: 1px;
+
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+.grid-container8:hover{
+    transform: scale(1.01);
+}
+.grid-container11{
+    display: grid;
+    background-image: url("bilder/ragnar-lodbrok.jpg");
+    height: 900px;
+    grid-gap: 1px;
+    text-align: center;
+    border: solid;
+    border-color: white;
+
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+.grid-container11:hover{
+    transform: scale(1.01);
+}
+.grid-container12{
+    display: grid;
+    background-image: url("bilder/Vikinger-på-stranda.jpg");
+    height: 1300px;
+    margin-top: 10px;
+    width: 1500px;
+    grid-gap: 1px;
+    border: solid;
+    border-color: white;
+
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+.grid-container12:hover{
+    transform: scale(1.01);
+}
+.grid-container13{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    height: 1200px;
+    width: 1200px;
+    grid-gap: 1px;
+    align-items: center;
+    background-image: url("bilder/ragnar-lodbrok-close-up.jpg");
+    border: solid;
+    border-color: white;
+    text-align: center;
+
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+.grid-container13:hover{
+    transform: scale(1.01);
+}
+.grid-container14{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    height: 600px;
+    width: 1250px;
+    grid-gap: 1px;
+    align-items: center;
+    border: solid;
+    border-color: white;
+    background-image: url("bilder/Hvitserk-rir.jpg");
+
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+.grid-container14:hover{
+    transform: scale(1.01);
+}
+.grid-containerbilder{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    }
+.A1{
+    background-position: center;
+
+    background-image: url("bilder/ragnar-lodbrok-close-up.jpg");
+    height: 600px;
+    width: auto;
+    border: solid;
+    border-color: white;
+    border-radius: 10px;
+
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+.A1:hover{
+    transform: scale(1.01);
+}
+.B1{
+    /* sier hvor bakgrunnen skal stilles*/
+    background-position: center;
+
+    background-image: url("bilder/Bjørn-jernside-sverd.jpg");
+    height: 400px;
+    width: auto;
+    border: solid;
+    border-color: white;
+    border-radius: 10px;
+
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+.B1:hover{
+    transform: scale(1.01);
+}
+.C1{
+    background-position: center top;
+
+    background-image: url("bilder/harrald-hårfagre.jpg");
+    height: 600px;
+    width: auto;
+    border: solid;
+    border-color: white;
+    border-radius: 10px;
+
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+.C1:hover{
+    transform: scale(1.01);
+}
+.D1{
+    background-position: center top;
+
+    background-image: url("bilder/Hvitserk-rir.jpg");
+    height: 600px;
+    width: auto;
+    border: solid;
+    border-color: white;
+    border-radius: 10px;
+
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+.D1:hover{
+    transform: scale(1.01);
+}
+.E1{
+    background-position: center;
+    background-image: url("bilder/harald-siggurdsson.jpg");
+    height: 600px;
+    width: auto;
+    border: solid;
+    border-color: white;
+    border-radius: 10px;
+
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+.E1:hover{
+    transform: scale(1.01);
+}
+.grid-containervideo{
+    display: grid;
+    grid-template-columns: 100%;
+}
