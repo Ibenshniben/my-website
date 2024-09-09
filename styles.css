@@ -60,8 +60,8 @@ body{
 }
 /*button styling*/
 .navbar{
-    display: grid;
-    grid-template-columns: 60% 13% 13% 13%;
+    display: flex;
+    justify-content: space-between;
     backdrop-filter: blur(20px);
     border: solid;
     border-top: none;
@@ -70,7 +70,11 @@ body{
     border-color: white;
     margin-left: 20px;
     margin-right: 20px;
-
+}
+.navbar-knapper{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
 }
 .innhold-hjem{
     display: grid;
@@ -80,4 +84,20 @@ body{
     color: white;
     font-family: 'Times New Roman', Times, serif;
     font-size: xx-large;
+}
+
+@media(min-screen:900px) {
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        backdrop-filter: blur(20px);
+        border: solid;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-color: white;
+        margin-left: 20px;
+        margin-right: 20px;
+    
+    }
 }
