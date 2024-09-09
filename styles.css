@@ -87,6 +87,11 @@ body{
 }
 
 @media(min-screen:900px) {
+    .navbar-knapper{
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+    }
     .navbar{
         display: flex;
         justify-content: space-between;
