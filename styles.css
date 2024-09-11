@@ -17,14 +17,33 @@ body{
     display: none;
 }
 .hjem-innhold{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 25vh;
+    display: grid; 
+  grid-auto-columns: 1fr; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  gap: 30px 30px; 
+  grid-template-areas: 
+    ". ."
+    ". .";
+    padding: 10vw;
+    margin-top: 15vh;
     gap: 20px;
     color: white;
 }
-.box1{
-    outline: solid rgb(120, 120, 120);
+.box{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 15px;
+    padding: 50px 30px 50px 30px;
+    background-color: rgb(48, 53, 90);
+    border: 1px solid white;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+.box:hover{
+    scale: 1.02;
+
 }
 p{
     text-decoration: none;
@@ -87,6 +106,7 @@ p{
 }
 nav{
     width: 100vw;
+    z-index: 999;
     display: flex;
     justify-content: center;
     position: fixed;
@@ -125,6 +145,13 @@ nav{
 }
 
 @media screen and (max-width:900px) {
+    .hjem-innhold{
+        display: flex;
+        flex-direction: column;
+    }
+    #video1{
+        height: 100vh;
+    }
     .navbar-knapper{
         display: flex;
         flex-direction: row;
