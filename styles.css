@@ -1,10 +1,16 @@
 body{
     background-color: rgb(26, 31, 71);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 #logo-navbar{
     height: 50px;
     margin-top: 25px;
     margin-left: 5px;
+}
+.off-screen-menu{
+    display: none;
 }
 .p{
     text-decoration: none;
@@ -86,12 +92,75 @@ body{
     font-size: xx-large;
 }
 
-@media(min-screen:900px) {
+@media screen and (max-width:900px) {
     .navbar-knapper{
         display: flex;
         flex-direction: row;
         gap: 15px;
     }
+    .off-screen-menu ul a{
+        text-decoration: none;
+        color: white;
+    }
+    .off-screen-menu ul{
+        display: flex;
+        flex-direction: column;
+    }
+    /* off-screen-menu */
+    .off-screen-menu{
+        background-color: rgb(48, 53, 90);
+        height: 100vh;
+        width: 100%;
+        max-width: 450px;
+        position: fixed;
+        top: 0;
+        right: -450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 3rem;
+        transition: .3s ease;
+    }
+    .off-screen-menu.active {
+        right: 0;
+    }
+    .ham-menu{
+        height: 50px;
+        width: 50px;
+        margin-left: auto;
+        position: relative;
+    }
+    .ham-menu span{
+        height: 5px;
+        width: 100%;
+        background-color: white;
+        border-radius: 25px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: .3s ease;
+    }
+    .ham-menu span:nth-child(1){
+        top: 25%;
+    }
+    .ham-menu span:nth-child(3){
+        top: 75%;
+    }
+    .ham-menu.active span:nth-child(1){
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    .ham-menu.active span:nth-child(2){
+        opacity: 0;
+    }
+    .ham-menu.active span:nth-child(3){
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
     .navbar{
         display: flex;
         justify-content: space-between;
@@ -104,5 +173,12 @@ body{
         margin-left: 20px;
         margin-right: 20px;
     
+    }
+    html,body{
+        width: 100vw;
+        
+    }
+    .btn{
+        display: none;
     }
 }
