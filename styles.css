@@ -12,7 +12,10 @@ body{
 .off-screen-menu{
     display: none;
 }
-.p{
+h1{
+    font-size: 6vw;
+}
+p{
     text-decoration: none;
 }
 /*button styling*/
@@ -97,6 +100,9 @@ body{
         display: flex;
         flex-direction: row;
         gap: 15px;
+    }
+    h1{
+        font-size: 6vw;
     }
     .off-screen-menu ul a{
         text-decoration: none;
