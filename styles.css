@@ -144,6 +144,7 @@ nav{
     font-size: xx-large;
 }
 
+
 @media screen and (max-width:900px) {
     .hjem-innhold{
         display: flex;
@@ -176,7 +177,7 @@ nav{
         max-width: 450px;
         position: fixed;
         top: 0;
-        right: -450px;
+        right: -120%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -186,7 +187,7 @@ nav{
         transition: .3s ease;
     }
     .off-screen-menu.active {
-        right: 0;
+        right: -6%;
     }
     .ham-menu{
         height: 50px;
@@ -232,8 +233,6 @@ nav{
         border-left: none;
         border-right: none;
         border-color: white;
-        margin-left: 20px;
-        margin-right: 20px;
     
     }
     html,body{
@@ -243,4 +242,15 @@ nav{
     .btn{
         display: none;
     }
+}
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
 }
