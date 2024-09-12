@@ -94,7 +94,7 @@ p{
     transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
     position: relative;
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: 10px;
     border: solid;
     border-width: 1px;
     backdrop-filter: blur(5px);
@@ -197,6 +197,42 @@ nav{
 
 
 @media screen and (max-width:900px) {
+
+    .down-arrow {
+        position: absolute;
+        top: calc(95vh - 60px);
+        left: calc(50% - 0px);
+        width: 0;
+        height: 30px;
+        border: 2px  white solid;
+        border-radius: 2px;
+        animation: jumpInfinite 1.5s infinite;
+      }
+      
+      .down-arrow:after {
+        content: " ";
+        position: absolute;
+        top: 12px;
+        left: -10px;
+        width: 16px;
+        height: 16px;
+        border-bottom: 4px white solid;
+        border-right: 4px white solid;
+        border-radius: 4px;
+        transform: rotateZ(45deg);
+      }
+      @keyframes jumpInfinite {
+        0% {
+          margin-top: 0;
+        }
+        50% {
+          margin-top: 10px;
+        }
+        100% {
+          margin-top: 0;
+        }
+      }
+      
     .hjem-innhold{
         display: flex;
         flex-direction: column;
