@@ -16,6 +16,24 @@ body{
 .off-screen-menu{
     display: none;
 }
+.footer{
+    border: solid 1px gray;
+    border-radius: 10px;
+    height: 50vh;
+    color: white;
+    text-decoration: none;
+    background-color: rgb(48, 53, 90);
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer1 img{
+    height: 100px;
+}
+.footer5 img{
+    height: 80px;
+}
 .down-arrow {
     position: absolute;
     top: calc(100vh - 60px);
