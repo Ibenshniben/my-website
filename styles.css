@@ -3,10 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+html,
 body{
     background-color: rgb(26, 31, 71);
     width: 100vw;
-    overflow-x: hidden;
+    overflow-y: hidden;
 }
 #logo-navbar{
     height: 50px;
@@ -18,6 +19,7 @@ body{
 }
 .footer{
     border: solid 1px gray;
+    width: 100vw;
     border-radius: 10px;
     height: 50vh;
     color: white;
