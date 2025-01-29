@@ -285,7 +285,7 @@ nav{
     transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .innhold-hjem-hjem{
-    background-image: url("lugas-ib.jpg");
+    background-image: url("mussi.jpg");
     background-position: right bottom;
     background-size: cover;
     display: flex;
