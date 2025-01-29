@@ -6,6 +6,26 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>Kontakt</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        iframe {
+            width: 80%;
+            height: 800px;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>   
 </head>
 <body>
     <script>
@@ -41,50 +61,58 @@
             <div class="navbar-knapper">
                 <a href="prosjekter.html"><button class="btn btn1">Prosjekter</button></a>
                 <a href="om-meg.html"><button class="btn btn1">Om meg</button></a>
-                <a href="kontakt.html"><button class="btn btn1">Kontakt</button></a>
+                <a href="kontakt.html"><button class="btn btn1">CV</button></a>
             </div>
         </div>
     </nav>
-    <div class="innhold-hjem">
-        <h1>KONTAKT</h1>
-        <p>Under konstruksjon</p>
+    <div class="innhold-hjem-cv">
+        <h1>CV</h1>
+        <p>Ib Strømsvåg</p>
     </div>
     
     <div class="down-arrow"></div>
 
-    <div class="footer"></div>
-        <div class="footer1">
-            <img src="ib-logo-hvit.png">
-        </div>
-        <div class="footer2">
-            <p>Forfatter: Ib Strømsvåg</p>
-            <p><a href="mailto:ibjulian9@gmail.com">ibjulian9@gmail.com</a></p>
-            <p>Eksempel</p>
-            <p>Eksempel</p>
-            <p>Eksempel</p>
-            <p>Eksempel</p>
-        </div>
-        <div class="footer3">
-            <p>Forfatter: Ib Strømsvåg</p>
-            <p><a href="mailto:ibjulian9@gmail.com">ibjulian9@gmail.com</a></p>
-            <p>Eksempel</p>
-            <p>Eksempel</p>
-            <p>Eksempel</p>
-            <p>Eksempel</p>
-        </div>
-        <div class="footer4">
-            <p>Forfatter: Ib Strømsvåg</p>
-            <p><a href="mailto:ibjulian9@gmail.com">ibjulian9@gmail.com</a></p>
-            <p>Eksempel</p>
-            <p>Eksempel</p>
-            <p>Eksempel</p>
-            <p>Eksempel</p>
-        </div>
-        <div class="footer5">
-            <img src="android-chrome-512x512.png">
-        </div>
-        </div>
+    <!-- PDF vises her -->
+    <iframe src="CVib.pdf" title="PDF-visning"></iframe>
+
+    <div>
+        <!-- Kopi-knapp -->
+        <button class="btn btn1" window.location.href='mailto:ibjulian9@gmail.com'">Send e-post</button>
     </div>
+
+    <div class="footer">        <div class="footer1">
+        <img src="ib-logo-hvit.png">
+    </div>
+    <div class="footer2">
+        <p>Forfatter: Ib Strømsvåg</p>
+        <p><a href="mailto:ibjulian9@gmail.com">ibjulian9@gmail.com</a></p>
+        <p>Eksempel</p>
+        <p>Eksempel</p>
+        <p>Eksempel</p>
+        <p>Eksempel</p>
+    </div>
+    <div class="footer3">
+        <p>Forfatter: Ib Strømsvåg</p>
+        <p><a href="mailto:ibjulian9@gmail.com">ibjulian9@gmail.com</a></p>
+        <p>Eksempel</p>
+        <p>Eksempel</p>
+        <p>Eksempel</p>
+        <p>Eksempel</p>
+    </div>
+    <div class="footer4">
+        <p>Forfatter: Ib Strømsvåg</p>
+        <p><a href="mailto:ibjulian9@gmail.com">ibjulian9@gmail.com</a></p>
+        <p>Eksempel</p>
+        <p>Eksempel</p>
+        <p>Eksempel</p>
+        <p>Eksempel</p>
+    </div>
+    <div class="footer5">
+        <img src="android-chrome-512x512.png">
+    </div>
+    </div>
+</div></div>
+
 
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.12.2/intersection-observer.min.js"></script>

@@ -10,7 +10,7 @@ body{
     overflow-x: hidden;
 }
 #logo-navbar{
-    height: 50px;
+    height: 40px;
     margin-top: 25px;
     margin-left: 5px;
 }
@@ -85,6 +85,20 @@ body{
     gap: 20px;
     color: white;
 }
+.forventninger{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 30vh;
+    margin-bottom: 40vh;
+    align-items: center;
+    position: relative;
+    font-size: xx-large;
+    text-align: center;
+    align-items: center;
+    color: white;
+
+}
 .box{
     display: flex;
     flex-direction: column;
@@ -110,11 +124,12 @@ p{
     font-size: 20px;
     font-family: sans-serif;
     color: white;
+    text-decoration: none;
     cursor: pointer;
     transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 5px;
     border: solid;
     border-width: 1px;
     backdrop-filter: blur(5px);
@@ -189,7 +204,10 @@ nav{
     flex-direction: row;
     gap: 15px;
 }
-.innhold-hjem{
+.innhold-hjem-hendelser{
+    background-image: url("im-awards.png");
+    background-position: center;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -198,23 +216,131 @@ nav{
     position: relative;
     transform: translate(-50%,-50%);
     left: 50%;
-    border-radius: 100%;
-    aspect-ratio: 1/1;
     height: 30vw;
+    width: 80vw;
+    border-radius: 25px;
     min-height: 400px;
-    border: solid gray 1px;
+    border: solid gray 0px;
     grid-template-columns: 100%;
     text-align: center;
     margin-top: 25vh;
     color: white;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: xx-large;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: xxx-large;
     transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-.innhold-hjem:hover{
-    background-color: rgb(48, 53, 90);
+.innhold-hjem-læringsmål{
+    background-image: url("abid-5.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 30vh;
+    align-items: center;
+    position: relative;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    height: 30vw;
+    width: 80vw;
+    border-radius: 25px;
+    min-height: 400px;
+    border: solid gray 0px;
+    grid-template-columns: 100%;
+    text-align: center;
+    margin-top: 25vh;
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: xxx-large;
+    transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.innhold-hjem-cv{
+    display: grid;
+    color: white;
+    margin-top: 150px;
+}
+.innhold-hjem-qna{
+    background-image: url("tik-tok-trond_2.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 30vh;
+    align-items: center;
+    position: relative;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    height: 30vw;
+    width: 80vw;
+    border-radius: 25px;
+    min-height: 400px;
+    border: solid gray 0px;
+    grid-template-columns: 100%;
+    text-align: center;
+    margin-top: 25vh;
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: xxx-large;
+    transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.innhold-hjem-hjem{
+    background-image: url("lugas-ib.jpg");
+    background-position: right bottom;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 30vh;
+    align-items: center;
+    position: relative;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    height: 30vw;
+    width: 80vw;
+    border-radius: 25px;
+    min-height: 400px;
+    border: solid gray 0px;
+    grid-template-columns: 100%;
+    text-align: center;
+    margin-top: 25vh;
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: xxx-large;
+    transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+#im-awards{
+    background-image: url("im-awards.png");
+    background-position: center;
+    background-size: cover;
+    
+}
+#fadder{
+    background-image: url("fadder.jpg");
+    background-position: center;
+    background-size: cover;
+}
+#ytringsdagen{
+    background-image: url("ytringsdagen.jpg");
+    background-position: center;
+    background-size: cover;
+}
+#frokost{
+    background-image: url("frokost.jpg");
+    background-position: center;
+    background-size: cover;
+}
+#im-lan{
+    background-image: url("im-lan.jpg");
+    background-position: center;
+    background-size: cover;
+}
+#techpoint{
+    background-image: url("techpoint.jpg");
+    background-position: center;
+    background-size: cover;
+}
 
 @media screen and (max-width:900px) {
 
@@ -238,6 +364,12 @@ nav{
     }
     .footer3{
         display: none;
+    }
+    #logo-navbar{
+        height: 20px;
+        margin-top: 25px;
+        margin-bottom: 10px;
+        margin-left: 5px;
     }
 
     .down-arrow {
