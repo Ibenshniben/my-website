@@ -13,10 +13,11 @@
             margin: 20px;
         }
         #pdf-viewer {
-            width: 63%;
+            width: 80vw; /* Bruk viewport-enheter for bredde */
+            max-width: 100%; /* Sørg for at den ikke overstiger 100% bredde */
             border: 1px solid #ddd;
             border-radius: 25px;
-            margin: 50px auto 10px auto; /* Legg til margin på toppen og bunnen */
+            margin: 50px auto; /* Sentrer elementet */
             display: flex;
             flex-direction: column; /* Vis flere sider vertikalt */
             justify-content: center; /* Sentrer innholdet */
@@ -24,6 +25,8 @@
             padding: 0; /* Fjern padding */
         }
         .pdf-page {
+            width: 100%; /* Sørg for at PDF-sidene fyller hele bredden */
+            height: auto; /* Juster høyden automatisk */
             margin-bottom: 20px; /* Legg til margin mellom sidene */
         }
         button {
@@ -49,6 +52,23 @@
             display: flex;
             justify-content: center;
             margin-bottom: 50px; /* Legg til margin nederst for å unngå overlapping */
+        }
+
+        /* Media queries for mobile devices */
+        @media (max-width: 768px) {
+            #pdf-viewer {
+                width: 90vw; /* Øk bredden for mobilvisning */
+                margin: 20px auto; /* Juster marginene for mobilvisning */
+            }
+            .pdf-page {
+                width: 100%; /* Sørg for at PDF-sidene fyller hele bredden */
+                height: auto; /* Juster høyden automatisk */
+            }
+            .copy-btn-container {
+                display: flex; /* Sørg for at knappen vises på mobil */
+                justify-content: center;
+                margin-bottom: 20px; /* Juster marginen for mobil */
+            }
         }
     </style>
 </head>
@@ -94,7 +114,6 @@
         <p>Ib Strømsvåg</p>
     </div>
     
-
     <!-- PDF vises her -->
     <div id="pdf-viewer"></div>
 
