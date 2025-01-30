@@ -368,7 +368,7 @@ nav{
         display: none;
     }
     #logo-navbar{
-        height: 20px;
+        height: 60px;
         margin-top: 25px;
         margin-bottom: 10px;
         margin-left: 5px;
@@ -389,7 +389,7 @@ nav{
         display: grid;
         color: white;
         margin-top: 150px;
-        margin-bottom: -500px;
+        margin-bottom: -750px;
     }
     .pdf-page {
         margin-bottom: 20px; /* Legg til margin mellom sidene */
