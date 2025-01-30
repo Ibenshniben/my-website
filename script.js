@@ -56,7 +56,7 @@ loadingTask.promise.then(pdf => {
 const customText = `
 Ib Julian Trollnes Strømsvåg
 
-Adresse: Elgstien 47B, 4637 Kristiansand
+Adresse: Elgstien 78B, 4637 Kristiansand
 Telefon: +47 483 81 121
 E-post: ibjulian9@gmail.com
 LinkedIn: linkedin.com/in/ib-stromsvag
