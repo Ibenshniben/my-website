@@ -55,21 +55,18 @@ loadingTask.promise.then(pdf => {
 
 const customText = `
 Ib Julian Trollnes Strømsvåg
-
 Adresse: Elgstien 78B, 4637 Kristiansand
 Telefon: +47 483 81 121
 E-post: ibjulian9@gmail.com
-LinkedIn: linkedin.com/in/ib-stromsvag
+LinkedIn: linkedin.com/in/ib-strømsvåg
 Nettside: ibstromsvag.com
-
-Nøkkelkompetanse:
+Nøkkelkompetanse
 • Kreativ problemløsning og innovasjon
 • Programmering: HTML, CSS, Python, JavaScript, SQL, PHP
 • Sterk teknisk forståelse og ferdigheter
 • Erfaring med designverktøy og multimedieproduksjon
 • Gode kommunikasjons- og samarbeidsevner
-
-Arbeidserfaring:
+Arbeidserfaring
 Vaktmesterassistent (midlertidig arbeid)
 Avigo
 13. juni 2024 – 9. august 2024
@@ -77,34 +74,37 @@ Avigo
 • Bidro til en effektiv flytteprosess med fokus på organisering og fysisk arbeid.
 • Samarbeidet med kollegaer for å sikre en smidig overføring av eiendeler.
 
-Utdanning:
+Frivillig stallarbeid (nåværende)
+Arendal og Grimstad Rideklubb
+Nåværende, 2025
+• Hjelper med å fôre og stelle 200 hester hver torsdag og en helg i måneden. 
+• Bidrar til dyrevelferd og daglig drift av stallen. 
+• Arbeider selvstendig og i team.
+Utdanning
 Informasjonsteknologi og medieproduksjon (VG1)
 2023 – 2024
 Informasjonsteknologi (VG2)
 2024 – 2025
 Grunnskole
 Avsluttet 2023
-
-Sertifikater og Kurs:
+Sertifikater og Kurs
 • Ingen oppgitt foreløpig (kan legges til ved behov).
-
-Språkkunnskaper:
+Språkkunnskaper
 • Norsk: Morsmål (snakker og skriver flytende)
 • Engelsk: Svært godt muntlig og skriftlig
-
-IT- og Programvarekunnskaper:
+IT- og Programvarekunnskaper
 • Programmering: HTML, CSS, Python, JavaScript, SQL, PHP
 • Verktøy og programvare:
-  o Visual Studio Code
-  o Adobe Illustrator
-  o Figma
-  o MySQL Workbench
-  o Microsoft Word og PowerPoint
-  o Adobe Premiere Pro
-  o Adobe XD
-
-Referanser:
+o Visual Studio Code
+o Adobe Illustrator
+o Figma
+o MySQL Workbench
+o Microsoft Word og PowerPoint
+o Adobe Premiere Pro
+o Adobe XD
+Referanser
 Oppgis ved forespørsel.
+
 `;
 
 document.getElementById('copy-btn').addEventListener('click', () => {
