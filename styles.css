@@ -695,6 +695,297 @@ nav {
     }
 }
 
+/* Projects Grid Styling */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: rgba(48, 53, 90, 0.8);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.project-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 15px;
+}
+
+.project-title {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: white;
+}
+
+.project-description {
+    color: #f0f0f0;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tag {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+.project-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+.box h1 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: white;
+    font-weight: 600;
+}
+
+.box p {
+    color: #f0f0f0;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.box ul {
+    color: #f0f0f0;
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.box li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.footer {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    min-height: 300px;
+    color: white;
+    background-color: rgb(48, 53, 90);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 40px 20px;
+    margin-top: 100px;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer div {
+    margin: 15px;
+}
+
+.footer img {
+    max-width: 150px;
+    height: auto;
+}
+
+.footer a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* =============================== */
+/*          CV Page Styling        */
+/* =============================== */
+#pdf-viewer {
+    width: 80%;
+    max-width: 800px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.pdf-page {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.copy-btn-container {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 50px;
+}
+
+/* =============================== */
+/*        Responsive Design        */
+/* =============================== */
+@media (max-width: 992px) {
+    .innhold-hjem-hendelser,
+    .innhold-hjem-læringsmål,
+    .innhold-hjem-qna,
+    .innhold-hjem-hjem,
+    .innhold-hjem-cv,
+    .innhold-hjem {
+        height: 40vw;
+    }
+    
+    .innhold-hjem-hendelser h1,
+    .innhold-hjem-læringsmål h1,
+    .innhold-hjem-qna h1,
+    .innhold-hjem-hjem h1,
+    .innhold-hjem-cv h1,
+    .innhold-hjem h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Update existing media queries and add new ones */
+@media (max-width: 768px) {
+    /* Navigation adjustments */
+    .navbar-knapper {
+        display: none;
+    }
+    
+    .ham-menu {
+        display: flex;
+    }
+    
+    .off-screen-menu {
+        display: block;
+    }
+
+    /* Content boxes adjustments */
+    .hjem-innhold {
+        grid-template-columns: 1fr;
+        padding: 10px;
+        gap: 20px;
+    }
+
+    .box {
+        padding: 15px;
+    }
+
+    .box .content {
+        padding: 15px;
+    }
+
+    .box h1 {
+        font-size: 1.2rem;
+    }
+
+    /* Header section adjustments */
+    .innhold-hjem-hjem {
+        height: 60vh;
+        margin: 60px auto 30px;
+    }
+
+    .innhold-hjem-hjem h1 {
+        font-size: 2rem;
+    }
+
+    /* Video and slideshow adjustments */
+    .container {
+        margin: 40px auto;
+    }
+
+    #video1 {
+        margin-top: 15vh;
+    }
+
+    /* Section titles */
+    .forventninger h1,
+    .section-title h1 {
+        font-size: 2rem;
+    }
+
+    /* Footer adjustments */
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 30px 15px;
+    }
+
+    .footer div {
+        margin: 10px 0;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .footer img {
+        max-width: 120px;
+    }
+}
+
+/* Additional breakpoint for very small devices */
+@media (max-width: 480px) {
+    .innhold-hjem-hjem h1 {
+        font-size: 1.8rem;
+    }
+
+    .box h1 {
+        font-size: 1.1rem;
+    }
+
+    .box p {
+        font-size: 0.9rem;
+    }
+
+    .container {
+        margin: 30px auto;
+    }
+
+    #video1 {
+        margin-top: 10vh;
+    }
+}
+
 /* About page styles */
 .about-content {
     display: flex;

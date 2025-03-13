@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     lenis.on("scroll", ScrollTrigger.update);
 
     gsap.ticker.add((time) => {
-        lenis.raf(time * 800);
+        lenis.raf(time * 1000);
     });
 
     gsap.ticker.lagSmoothing(0);
@@ -20,39 +20,40 @@ hamMenu.addEventListener('click', () =>{
     offScreenMenu.classList.toggle('active');
 })
 
-const url = 'CVib.pdf';
-
-const pdfjsLib = window['pdfjs-dist/build/pdf'];
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
-
-const loadingTask = pdfjsLib.getDocument(url);
-loadingTask.promise.then(pdf => {
-    const container = document.getElementById('pdf-viewer');
-
-    for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
-        pdf.getPage(pageNumber).then(page => {
+// PDF Viewer Configuration
+document.addEventListener('DOMContentLoaded', function() {
+    const url = 'CVib.pdf';
+    const loadingTask = pdfjsLib.getDocument(url);
+    
+    loadingTask.promise.then(function(pdf) {
+        // Get the first page
+        pdf.getPage(1).then(function(page) {
             const scale = 1.5;
             const viewport = page.getViewport({ scale: scale });
 
+            // Prepare canvas using PDF page dimensions
             const canvas = document.createElement('canvas');
             const context = canvas.getContext('2d');
             canvas.height = viewport.height;
             canvas.width = viewport.width;
 
+            // Render PDF page into canvas context
             const renderContext = {
                 canvasContext: context,
                 viewport: viewport
             };
-            page.render(renderContext);
 
-            const pageDiv = document.createElement('div');
-            pageDiv.className = 'pdf-page';
-            pageDiv.appendChild(canvas);
-            container.appendChild(pageDiv);
+            page.render(renderContext).promise.then(function() {
+                const container = document.getElementById('pdf-viewer');
+                if (container) {
+                    container.appendChild(canvas);
+                }
+            });
         });
-    }
+    }).catch(function(error) {
+        console.error('Error loading PDF:', error);
+    });
 });
-
 const customText = `
 Ib Julian Trollnes Strømsvåg
 Adresse: Elgstien 78B, 4637 Kristiansand

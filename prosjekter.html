@@ -5,32 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Prosjekter</title>
+    <!-- Add this line after your other script tags -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script>
+        pdfjsLib = window['pdfjs-dist/build/pdf'];
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
+    </script>
 </head>
 <body>
-    <script>
-    window.embeddedChatbotConfig = {
-    chatbotId: "naiad_52163utuCIhzYzo",
-    domain: "www.chatbase.co"
-    }
-    </script>
+    <!-- Chatbot Config og Script -->
     <script
-    src="https://www.chatbase.co/embed.min.js"
-    chatbotId="naiad_52163utuCIhzYzo"
-    domain="www.chatbase.co"
-    defer>
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="naiad_52163utuCIhzYzo"
+        domain="www.chatbase.co"
+        defer>
     </script>
+
+    <!-- Navigation -->
     <nav>   
         <div class="navbar">
             <div class="left-navbar">
-                <a href="index.html"><img src="ib-logo-hvit.png" id="logo-navbar"></a>
+                <a href="index.html"><img src="ib-logo-hvit.png" id="logo-navbar" alt="Ib Strømsvåg Logo"></a>
             </div>
             <div class="off-screen-menu">
                 <ul>
+                    <a href="index.html">Hjem</a>
                     <a href="prosjekter.html">Prosjekter</a>
                     <a href="om-meg.html">Om meg</a>
                     <a href="kontakt.html">CV</a>
-    
                 </ul>
             </div>
             <div class="ham-menu">
@@ -38,58 +42,84 @@
                 <span></span>
                 <span></span>
             </div>
+            <!-- Navigation section -->
             <div class="navbar-knapper">
                 <a href="prosjekter.html"><button class="btn btn1">Prosjekter</button></a>
                 <a href="om-meg.html"><button class="btn btn1">Om meg</button></a>
-                <a href="kontakt.html"><button class="btn btn1">CV</button></a>
+                <a href="kontakt.html" target="_blank"><button class="btn btn1">CV</button></a>
             </div>
         </div>
     </nav>
+
+    <!-- Header -->
     <div class="innhold-hjem">
         <h1>PROSJEKTER</h1>
-        <p>Under konstruksjon</p>
+        <p>Mine arbeider og prosjekter</p>
     </div>
 
-    <div class="down-arrow"></div>
-
-    <div class="footer"></div>
-        <div class="footer1">
-            <img src="ib-logo-hvit.png">
+    <!-- Projects Grid -->
+    <div class="projects-grid">
+        <div class="project-card">
+            <img src="gervi-nettside.png" alt="AI Project with Gervi Labs" class="project-image">
+            <div class="project-content">
+                <h3 class="project-title">AI Prosjekt med Gervi Labs</h3>
+                <p class="project-description">Et innovativt samarbeidsprosjekt hvor vi utviklet en AI-assistent og skapte en musikkvideo ved hjelp av kunstig intelligens. Prosjektet inkluderer AI-generert musikk og video presentert på en spesialdesignet nettside med mørkeblå fargetema.</p>
+                <div class="project-tags">
+                    <span class="tag">AI</span>
+                    <span class="tag">Webutvikling</span>
+                    <span class="tag">Video</span>
+                    <span class="tag">Musikk</span>
+                    <span class="tag">Gervi Labs</span>
+                </div>
+                <a href="https://y-tawny-three-55.vercel.app/" class="project-link" target="_blank">Se prosjektet</a>
+            </div>
         </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
         <div class="footer2">
-            <p>Forfatter: Ib Strømsvåg</p>
+            <p><strong>Kontakt</strong></p>
             <p><a href="mailto:ibjulian9@gmail.com">ibjulian9@gmail.com</a></p>
-            <p>Eksempel</p>
-            <p>Eksempel</p>
-            <p>Eksempel</p>
-            <p>Eksempel</p>
+            <p><a href="tel:+47483811121">+47 483 81 121</a></p>
+            <p>Kristiansand, Norge</p>
+        </div>
+        <!-- Off-screen menu -->
+        <div class="off-screen-menu">
+            <ul>
+                <a href="index.html">Hjem</a>
+                <a href="prosjekter.html">Prosjekter</a>
+                <a href="om-meg.html">Om meg</a>
+                <a href="CVib.pdf" target="_blank">CV</a>
+            </ul>
         </div>
         <div class="footer3">
-            <p>Forfatter: Ib Strømsvåg</p>
-            <p><a href="mailto:ibjulian9@gmail.com">ibjulian9@gmail.com</a></p>
-            <p>Eksempel</p>
-            <p>Eksempel</p>
-            <p>Eksempel</p>
-            <p>Eksempel</p>
+            <p><strong>Lenker</strong></p>
+            <p><a href="index.html">Hjem</a></p>
+            <p><a href="prosjekter.html">Prosjekter</a></p>
+            <p><a href="om-meg.html">Om meg</a></p>
+            <p><a href="CVib.pdf" target="_blank">CV</a></p>
         </div>
         <div class="footer4">
-            <p>Forfatter: Ib Strømsvåg</p>
-            <p><a href="mailto:ibjulian9@gmail.com">ibjulian9@gmail.com</a></p>
-            <p>Eksempel</p>
-            <p>Eksempel</p>
-            <p>Eksempel</p>
-            <p>Eksempel</p>
-        </div>
-        <div class="footer5">
-            <img src="android-chrome-512x512.png">
-        </div>
+            <p><strong>Sosiale medier</strong></p>
+            <p><a href="#">LinkedIn</a></p>
+            <p><a href="#">GitHub</a></p>
+            <p><a href="#">Instagram</a></p>
         </div>
     </div>
 
+    <!-- Scripts -->
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.12.2/intersection-observer.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/lenis@1.1.1/dist/lenis.min.js"></script>
+
+
+
+    <div id="pdf-viewer"></div>
+    <div class="copy-btn-container">
+        <button id="copy-btn" class="btn btn1">Kopier CV tekst</button>
+    </div>
 </body>
 </html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <title>CV - Ib Strømsvåg</title>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>   
+        <div class="navbar">
+            <div class="left-navbar">
+                <a href="index.html"><img src="ib-logo-hvit.png" id="logo-navbar" alt="Ib Strømsvåg Logo"></a>
+            </div>
+            <div class="off-screen-menu">
+                <ul>
+                    <a href="index.html">Hjem</a>
+                    <a href="prosjekter.html">Prosjekter</a>
+                    <a href="om-meg.html">Om meg</a>
+                    <a href="cv.html">CV</a>
+                </ul>
+            </div>
+            <div class="ham-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="navbar-knapper">
+                <a href="prosjekter.html"><button class="btn btn1">Prosjekter</button></a>
+                <a href="om-meg.html"><button class="btn btn1">Om meg</button></a>
+                <a href="cv.html"><button class="btn btn1">CV</button></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="innhold-hjem">
+        <h1>CV</h1>
+        <p>Min curriculum vitae</p>
+    </div>
+
+    <!-- PDF Viewer -->
+    <!-- Add this line right after the pdf.js script -->
+    <script>
+        pdfjsLib = window['pdfjs-dist/build/pdf'];
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
+    </script>
+</head>
+
+    <div style="margin-top: 100px;">
+        <div id="pdf-viewer"></div>
+        <div class="copy-btn-container">
+            <a href="CVib.pdf" download class="btn btn1">Last ned CV</a>
+        </div>
+    </div>
+
+    <!-- Update the script section before closing body tag -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load the PDF
+            const loadingTask = pdfjsLib.getDocument('CVib.pdf');
+            
+            loadingTask.promise.then(function(pdf) {
+                console.log('PDF loaded');
+                
+                // Get page 1
+                return pdf.getPage(1).then(function(page) {
+                    const scale = 1.5;
+                    const viewport = page.getViewport({ scale: scale });
+
+                    // Prepare canvas
+                    const canvas = document.createElement('canvas');
+                    const context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+
+                    // Add canvas to the page
+                    const container = document.getElementById('pdf-viewer');
+                    container.appendChild(canvas);
+
+                    // Render PDF page
+                    const renderContext = {
+                        canvasContext: context,
+                        viewport: viewport
+                    };
+
+                    return page.render(renderContext).promise;
+                });
+            }).catch(function(error) {
+                console.error('Error loading PDF:', error);
+            });
+        });
+    </script>
+
+    <!-- Footer -->
+    <div class="footer">
+        <!-- Footer content same as other pages -->
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // PDF.js initialization
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
+
+        // Load and display PDF
+        const loadPDF = async () => {
+            const loadingTask = pdfjsLib.getDocument('CVib.pdf');
+            try {
+                const pdf = await loadingTask.promise;
+                const page = await pdf.getPage(1);
+                const scale = 1.5;
+                const viewport = page.getViewport({ scale });
+
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                const renderContext = {
+                    canvasContext: context,
+                    viewport: viewport
+                };
+
+                await page.render(renderContext).promise;
+                document.getElementById('pdf-viewer').appendChild(canvas);
+            } catch (error) {
+                console.error('Error loading PDF:', error);
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', loadPDF);
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
