@@ -28,11 +28,115 @@ body {
 @tailwind components;
 @tailwind utilities;
 
+/* Add these CSS variables at the top of your file */
 :root {
-  --primary-bg: rgb(26, 31, 71);
-  --secondary-bg: rgb(48, 53, 90);
-  --text-primary: #ffffff;
-  --text-secondary: #e0e0e0;
+  --bg-primary: rgb(26,31,71);
+  --bg-secondary: rgba(48,53,90,0.8);
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --text-primary: white;
+  --text-secondary: rgb(209, 213, 219);
+  --hover-bg: rgba(58,63,100,0.9);
+  --card-shadow: rgba(0, 0, 0, 0.2);
+  --border-light: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='light'] {
+  --bg-primary: rgb(240, 242, 245);
+  --bg-secondary: rgba(255, 255, 255, 0.7);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --text-primary: rgb(23, 23, 23);
+  --text-secondary: rgb(82, 82, 82);
+  --hover-bg: rgba(255, 255, 255, 0.9);
+  --card-shadow: rgba(0, 0, 0, 0.08);
+  --border-light: rgba(230, 230, 230, 0.7);
+}
+
+.bento-grid {
+  @apply grid gap-6 p-6 max-w-7xl mx-auto;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.bento-item {
+  @apply rounded-xl p-6 transition-all duration-300;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 4px 6px var(--card-shadow);
+}
+
+.bento-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px var(--card-shadow);
+}
+
+.glass-card {
+  @apply rounded-xl backdrop-blur-md;
+  background: var(--glass-bg);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 4px 6px var(--card-shadow);
+}
+
+.glass-nav {
+  @apply fixed top-0 w-full z-50;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.btn-glass {
+  @apply px-6 py-3 rounded-lg transition-all duration-300 font-medium;
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-light);
+}
+
+.btn-glass:hover {
+  transform: translateY(-2px);
+  background: var(--hover-bg);
+}
+
+/* Update button styles */
+.btn-primary {
+  @apply px-6 py-3 rounded-lg;
+  @apply transition-all duration-300;
+  @apply font-medium;
+  @apply transform hover:-translate-y-1;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  box-shadow: 0 4px 6px var(--card-shadow);
+}
+
+.btn-primary:hover {
+  background-color: var(--hover-bg);
+  box-shadow: 0 10px 15px var(--card-shadow);
+}
+
+/* Update card hover effect */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px var(--card-shadow);
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px var(--card-shadow);
+}
+
+/* Add these utility classes */
+.bg-primary-bg {
+  background-color: var(--bg-primary);
+}
+
+.bg-secondary-bg {
+  background-color: var(--bg-secondary);
+}
+
+.text-text-primary {
+  color: var(--text-primary);
+}
+
+.text-text-secondary {
+  color: var(--text-secondary);
 }
 
 body {
