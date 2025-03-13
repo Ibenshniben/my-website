@@ -28,7 +28,7 @@ body {
 @tailwind components;
 @tailwind utilities;
 
-/* Add these CSS variables at the top of your file */
+/* Your custom CSS below */
 :root {
   --bg-primary: rgb(26,31,71);
   --bg-secondary: rgba(48,53,90,0.8);
