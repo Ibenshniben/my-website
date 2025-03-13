@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  images: {
+    domains: ['cdnjs.cloudflare.com'],
+  },
+  scripts: {
+    domains: ['www.chatbase.co'],
+  },
+}
 
 export default nextConfig;
