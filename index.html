@@ -33,6 +33,7 @@
       </div>
       <div class="off-screen-menu">
         <ul>
+          <a href="index.html">Hjem</a>
           <a href="prosjekter.html">Prosjekter</a>
           <a href="om-meg.html">Om meg</a>
           <a href="kontakt.html">CV</a>
@@ -217,3 +218,14 @@
         <p>&copy; 2023 Ib Strømsvåg. Alle rettigheter reservert.</p>
       </div>
     </div>
+    <!-- Add this script before the closing body tag -->
+    <script>
+        const hamMenu = document.querySelector('.ham-menu');
+        const offScreenMenu = document.querySelector('.off-screen-menu');
+        
+        hamMenu.addEventListener('click', () => {
+            hamMenu.classList.toggle('active');
+            offScreenMenu.classList.toggle('active');
+        });
+    </script>
+    </body>

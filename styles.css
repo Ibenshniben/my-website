@@ -121,24 +121,79 @@ nav {
 /* =============================== */
 /*           Off-screen Menu       */
 /* =============================== */
+/* Update the off-screen menu styles */
 .off-screen-menu {
     display: none;
     position: fixed;
     top: 0;
     right: -100%;
-    width: 70%;
+    width: 100%;
     height: 100vh;
-    background-color: rgb(48, 53, 90);
-    padding-top: 80px;
-    transition: right 0.5s ease;
+    background-color: rgba(48, 53, 90, 0.95);
+    padding-top: 100px;
+    transition: right 0.3s ease;
     z-index: 998;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
 }
 
+.off-screen-menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+}
+
+.off-screen-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    width: 200px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.off-screen-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .footer1, .footer5 img {
+        display: none;
+    }
+    
+    #logo-navbar {
+        height: 30px;
+    }
+    
+    .ham-menu {
+        display: flex;
+        margin-right: 20px;
+    }
+}
 .off-screen-menu.active {
     right: 0;
+    display: block;
 }
 
+/* Update mobile media query */
+@media (max-width: 768px) {
+    .ham-menu {
+        display: flex;
+        position: relative;
+        z-index: 1000;
+        margin-right: 15px;
+    }
+
+    /* Hide video on mobile */
+    .video {
+        display: none;
+    }
+}
 .off-screen-menu ul {
     display: flex;
     flex-direction: column;
@@ -539,7 +594,9 @@ nav {
     }
 }
 
+/* Update existing media queries and add new ones */
 @media (max-width: 768px) {
+    /* Navigation adjustments */
     .navbar-knapper {
         display: none;
     }
@@ -551,43 +608,90 @@ nav {
     .off-screen-menu {
         display: block;
     }
-    
-    .innhold-hjem-hendelser,
-    .innhold-hjem-læringsmål,
-    .innhold-hjem-qna,
-    .innhold-hjem-hjem,
-    .innhold-hjem-cv,
-    .innhold-hjem {
-        height: 50vw;
-        min-height: 250px;
-        width: 95%;
+
+    /* Content boxes adjustments */
+    .hjem-innhold {
+        grid-template-columns: 1fr;
+        padding: 10px;
+        gap: 20px;
     }
-    
-    .innhold-hjem-hendelser h1,
-    .innhold-hjem-læringsmål h1,
-    .innhold-hjem-qna h1,
-    .innhold-hjem-hjem h1,
-    .innhold-hjem-cv h1,
-    .innhold-hjem h1 {
+
+    .box {
+        padding: 15px;
+    }
+
+    .box .content {
+        padding: 15px;
+    }
+
+    .box h1 {
+        font-size: 1.2rem;
+    }
+
+    /* Header section adjustments */
+    .innhold-hjem-hjem {
+        height: 60vh;
+        margin: 60px auto 30px;
+    }
+
+    .innhold-hjem-hjem h1 {
         font-size: 2rem;
     }
-    
+
+    /* Video and slideshow adjustments */
+    .container {
+        margin: 40px auto;
+    }
+
+    #video1 {
+        margin-top: 15vh;
+    }
+
+    /* Section titles */
+    .forventninger h1,
+    .section-title h1 {
+        font-size: 2rem;
+    }
+
+    /* Footer adjustments */
     .footer {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: 30px 15px;
     }
-    
+
     .footer div {
         margin: 10px 0;
+        width: 100%;
+        max-width: 300px;
     }
-    
-    #pdf-viewer {
-        width: 95%;
+
+    .footer img {
+        max-width: 120px;
     }
-    
-    .hjem-innhold {
-        grid-template-columns: 1fr;
+}
+
+/* Additional breakpoint for very small devices */
+@media (max-width: 480px) {
+    .innhold-hjem-hjem h1 {
+        font-size: 1.8rem;
+    }
+
+    .box h1 {
+        font-size: 1.1rem;
+    }
+
+    .box p {
+        font-size: 0.9rem;
+    }
+
+    .container {
+        margin: 30px auto;
+    }
+
+    #video1 {
+        margin-top: 10vh;
     }
 }
 
