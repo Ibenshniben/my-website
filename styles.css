@@ -407,27 +407,82 @@ nav {
 
 .box {
     background-color: rgba(48, 53, 90, 0.8);
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 25px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     height: 100%;
 }
 
+.box .content {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    height: 100%;
+}
+
 .box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .box h1 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-bottom: 15px;
     color: white;
+    font-weight: 600;
 }
 
 .box p {
-    color: #ddd;
+    color: #f0f0f0;
     line-height: 1.6;
+    font-size: 1rem;
+}
+
+.box ul {
+    color: #f0f0f0;
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.box li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.footer {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    min-height: 300px;
+    color: white;
+    background-color: rgb(48, 53, 90);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 40px 20px;
+    margin-top: 100px;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer div {
+    margin: 15px;
+}
+
+.footer img {
+    max-width: 150px;
+    height: auto;
+}
+
+.footer a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: white;
+    text-decoration: underline;
 }
 
 /* =============================== */
@@ -502,83 +557,141 @@ nav {
     .innhold-hjem-qna,
     .innhold-hjem-hjem,
     .innhold-hjem-cv,
-    .innhold-hjem
-    /* About page styles */
+    .innhold-hjem {
+        height: 50vw;
+        min-height: 250px;
+        width: 95%;
+    }
+    
+    .innhold-hjem-hendelser h1,
+    .innhold-hjem-læringsmål h1,
+    .innhold-hjem-qna h1,
+    .innhold-hjem-hjem h1,
+    .innhold-hjem-cv h1,
+    .innhold-hjem h1 {
+        font-size: 2rem;
+    }
+    
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer div {
+        margin: 10px 0;
+    }
+    
+    #pdf-viewer {
+        width: 95%;
+    }
+    
+    .hjem-innhold {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* About page styles */
+.about-content {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    padding: 40px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+    flex: 2;
+    color: white;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.about-text h3 {
+    font-size: 1.8rem;
+    margin: 25px 0 15px;
+    color: #ddd;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-text ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.about-text li {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+/* Media queries for about page */
+@media (max-width: 768px) {
     .about-content {
-        display: flex;
-        flex-direction: row;
-        gap: 40px;
-        padding: 40px 0;
-        max-width: 1200px;
-        margin: 0 auto;
+        flex-direction: column;
+        padding: 20px;
     }
     
     .about-image {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-    }
-    
-    .about-image img {
-        max-width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-    
-    .about-text {
-        flex: 2;
-        color: white;
+        margin-bottom: 30px;
     }
     
     .about-text h2 {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-        color: var(--primary-color);
+        font-size: 2rem;
     }
     
     .about-text h3 {
-        font-size: 1.8rem;
-        margin: 25px 0 15px;
-        color: var(--secondary-color);
-    }
-    
-    .about-text p {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        margin-bottom: 15px;
-    }
-    
-    .about-text ul {
-        margin-left: 20px;
-        margin-bottom: 20px;
-    }
-    
-    .about-text li {
-        margin-bottom: 8px;
-        font-size: 1.1rem;
-    }
-    
-    /* Media queries for about page */
-    @media (max-width: 768px) {
-        .about-content {
-            flex-direction: column;
-            padding: 20px;
-        }
-        
-        .about-image {
-            margin-bottom: 30px;
-        }
-        
-        .about-text h2 {
-            font-size: 2rem;
-        }
-        
-        .about-text h3 {
-            font-size: 1.5rem;
-        }
+        font-size: 1.5rem;
     }
 }
+
+/* Section title styling */
+.section-title {
+    text-align: center;
+    margin: 80px auto 40px;
+    padding: 20px;
+}
+
+.section-title h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: white;
+}
+
 .lenis.lenis-smooth {
     scroll-behavior: auto !important;
 }
