@@ -19,6 +19,9 @@ export const metadata: Metadata = {
 
 import { ThemeProvider } from '@/components/ThemeProvider';
 import LoadingScreen from '@/components/LoadingScreen';
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({
   children,
@@ -27,12 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <ThemeProvider>
-          <LoadingScreen />
-          {children}
-        </ThemeProvider>
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
