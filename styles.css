@@ -1,0 +1,1100 @@
+/* =============================== */
+/*       Global Reset & Base       */
+/* =============================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: rgb(26, 31, 71);
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    scroll-behavior: smooth;
+}
+
+/* Container for better content alignment */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* =============================== */
+/*          Navigation             */
+/* =============================== */
+#logo-navbar {
+    height: 40px;
+    margin-top: 15px;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+#logo-navbar:hover {
+    transform: scale(1.1);
+}
+
+nav {
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    padding: 0 5vw;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(20px);
+    background-color: rgba(26, 31, 71, 0.8);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    align-items: center;
+    padding: 10px 0;
+}
+
+.navbar-knapper {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+/* Improved button styling */
+.btn {
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: rgb(48, 53, 90);
+    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    z-index: -1;
+    border-radius: 50% 50% 0 0;
+    bottom: 0;
+}
+
+.btn:hover {
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover::before {
+    height: 180%;
+}
+
+.btn1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    height: 45px;
+    margin: 15px 0;
+}
+
+/* =============================== */
+/*           Off-screen Menu       */
+/* =============================== */
+/* Update the off-screen menu styles */
+.off-screen-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(48, 53, 90, 0.95);
+    padding-top: 100px;
+    transition: right 0.3s ease;
+    z-index: 998;
+    backdrop-filter: blur(10px);
+}
+
+.off-screen-menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+}
+
+.off-screen-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    width: 200px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.off-screen-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .footer1, .footer5 img {
+        display: none;
+    }
+    
+    #logo-navbar {
+        height: 30px;
+    }
+    
+    .ham-menu {
+        display: flex;
+        margin-right: 20px;
+    }
+}
+.off-screen-menu.active {
+    right: 0;
+    display: block;
+}
+
+/* Update mobile media query */
+@media (max-width: 768px) {
+    .ham-menu {
+        display: flex;
+        position: relative;
+        z-index: 1000;
+        margin-right: 15px;
+    }
+
+    /* Hide video on mobile */
+    .video {
+        display: none;
+    }
+}
+.off-screen-menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+}
+
+.off-screen-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.off-screen-menu a:hover {
+    color: #ddd;
+    transform: translateX(5px);
+}
+
+.ham-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.ham-menu span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.ham-menu.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.ham-menu.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* =============================== */
+/*             Footer              */
+/* =============================== */
+.footer {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    min-height: 300px;
+    color: white;
+    text-decoration: none;
+    background-color: rgb(48, 53, 90);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 40px 20px;
+    margin-top: 100px;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer div {
+    margin: 15px;
+}
+
+.footer img {
+    max-width: 150px;
+    height: auto;
+}
+
+.footer a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* =============================== */
+/*          Video Styling          */
+/* =============================== */
+#video1 {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    margin-top: 25vh;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+/* =============================== */
+/*      Content Blocks Styling     */
+/* =============================== */
+.innhold-hjem-hendelser,
+.innhold-hjem-læringsmål,
+.innhold-hjem-qna,
+.innhold-hjem-hjem,
+.innhold-hjem-cv,
+.innhold-hjem {
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 120px auto 40px;
+    height: 30vw;
+    width: 90%;
+    max-width: 1200px;
+    border-radius: 15px;
+    min-height: 300px;
+    text-align: center;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.innhold-hjem-hendelser:hover,
+.innhold-hjem-læringsmål:hover,
+.innhold-hjem-qna:hover,
+.innhold-hjem-hjem:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.innhold-hjem-hendelser::before,
+.innhold-hjem-læringsmål::before,
+.innhold-hjem-qna::before,
+.innhold-hjem-hjem::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.innhold-hjem-hendelser h1,
+.innhold-hjem-læringsmål h1,
+.innhold-hjem-qna h1,
+.innhold-hjem-hjem h1,
+.innhold-hjem-cv h1,
+.innhold-hjem h1,
+.innhold-hjem p,
+.innhold-hjem-cv p {
+    position: relative;
+    z-index: 1;
+    margin: 10px 0;
+}
+
+.innhold-hjem-hendelser h1,
+.innhold-hjem-læringsmål h1,
+.innhold-hjem-qna h1,
+.innhold-hjem-hjem h1,
+.innhold-hjem-cv h1,
+.innhold-hjem h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.innhold-hjem-hendelser {
+    background-image: url("im-awards.png");
+}
+
+.innhold-hjem-læringsmål {
+    background-image: url("abid-5.jpg");
+}
+
+.innhold-hjem-qna {
+    background-image: url("tik-tok-trond_2.jpg");
+}
+
+.innhold-hjem-hjem {
+    background-image: url("mussi.jpg");
+}
+
+/* =============================== */
+/*         Slideshow Styling       */
+/* =============================== */
+.slideshow-container {
+    position: relative;
+    margin: 80px auto;
+    max-width: 90%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.slide {
+    display: none;
+    width: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4} 
+    to {opacity: 1}
+}
+
+/* =============================== */
+/*      Home Content Boxes         */
+/* =============================== */
+.forventninger {
+    text-align: center;
+    margin: 80px auto 40px;
+    padding: 20px;
+}
+
+.forventninger h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.forventninger h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: white;
+}
+
+.hjem-innhold {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.box {
+    background-color: rgba(48, 53, 90, 0.8);
+    border-radius: 15px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    height: 100%;
+}
+
+.box .content {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    height: 100%;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.box h1 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: white;
+    font-weight: 600;
+}
+
+.box p {
+    color: #f0f0f0;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.box ul {
+    color: #f0f0f0;
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.box li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.footer {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    min-height: 300px;
+    color: white;
+    background-color: rgb(48, 53, 90);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 40px 20px;
+    margin-top: 100px;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer div {
+    margin: 15px;
+}
+
+.footer img {
+    max-width: 150px;
+    height: auto;
+}
+
+.footer a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* =============================== */
+/*          CV Page Styling        */
+/* =============================== */
+#pdf-viewer {
+    width: 80%;
+    max-width: 800px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.pdf-page {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.copy-btn-container {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 50px;
+}
+
+/* =============================== */
+/*        Responsive Design        */
+/* =============================== */
+@media (max-width: 992px) {
+    .innhold-hjem-hendelser,
+    .innhold-hjem-læringsmål,
+    .innhold-hjem-qna,
+    .innhold-hjem-hjem,
+    .innhold-hjem-cv,
+    .innhold-hjem {
+        height: 40vw;
+    }
+    
+    .innhold-hjem-hendelser h1,
+    .innhold-hjem-læringsmål h1,
+    .innhold-hjem-qna h1,
+    .innhold-hjem-hjem h1,
+    .innhold-hjem-cv h1,
+    .innhold-hjem h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Update existing media queries and add new ones */
+@media (max-width: 768px) {
+    /* Navigation adjustments */
+    .navbar-knapper {
+        display: none;
+    }
+    
+    .ham-menu {
+        display: flex;
+    }
+    
+    .off-screen-menu {
+        display: block;
+    }
+
+    /* Content boxes adjustments */
+    .hjem-innhold {
+        grid-template-columns: 1fr;
+        padding: 10px;
+        gap: 20px;
+    }
+
+    .box {
+        padding: 15px;
+    }
+
+    .box .content {
+        padding: 15px;
+    }
+
+    .box h1 {
+        font-size: 1.2rem;
+    }
+
+    /* Header section adjustments */
+    .innhold-hjem-hjem {
+        height: 60vh;
+        margin: 60px auto 30px;
+    }
+
+    .innhold-hjem-hjem h1 {
+        font-size: 2rem;
+    }
+
+    /* Video and slideshow adjustments */
+    .container {
+        margin: 40px auto;
+    }
+
+    #video1 {
+        margin-top: 15vh;
+    }
+
+    /* Section titles */
+    .forventninger h1,
+    .section-title h1 {
+        font-size: 2rem;
+    }
+
+    /* Footer adjustments */
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 30px 15px;
+    }
+
+    .footer div {
+        margin: 10px 0;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .footer img {
+        max-width: 120px;
+    }
+}
+
+/* Additional breakpoint for very small devices */
+@media (max-width: 480px) {
+    .innhold-hjem-hjem h1 {
+        font-size: 1.8rem;
+    }
+
+    .box h1 {
+        font-size: 1.1rem;
+    }
+
+    .box p {
+        font-size: 0.9rem;
+    }
+
+    .container {
+        margin: 30px auto;
+    }
+
+    #video1 {
+        margin-top: 10vh;
+    }
+}
+
+/* Projects Grid Styling */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: rgba(48, 53, 90, 0.8);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.project-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 15px;
+}
+
+.project-title {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: white;
+}
+
+.project-description {
+    color: #f0f0f0;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tag {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+.project-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+.box h1 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: white;
+    font-weight: 600;
+}
+
+.box p {
+    color: #f0f0f0;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.box ul {
+    color: #f0f0f0;
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.box li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.footer {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    min-height: 300px;
+    color: white;
+    background-color: rgb(48, 53, 90);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 40px 20px;
+    margin-top: 100px;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer div {
+    margin: 15px;
+}
+
+.footer img {
+    max-width: 150px;
+    height: auto;
+}
+
+.footer a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* =============================== */
+/*          CV Page Styling        */
+/* =============================== */
+#pdf-viewer {
+    width: 80%;
+    max-width: 800px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.pdf-page {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.copy-btn-container {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 50px;
+}
+
+/* =============================== */
+/*        Responsive Design        */
+/* =============================== */
+@media (max-width: 992px) {
+    .innhold-hjem-hendelser,
+    .innhold-hjem-læringsmål,
+    .innhold-hjem-qna,
+    .innhold-hjem-hjem,
+    .innhold-hjem-cv,
+    .innhold-hjem {
+        height: 40vw;
+    }
+    
+    .innhold-hjem-hendelser h1,
+    .innhold-hjem-læringsmål h1,
+    .innhold-hjem-qna h1,
+    .innhold-hjem-hjem h1,
+    .innhold-hjem-cv h1,
+    .innhold-hjem h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Update existing media queries and add new ones */
+@media (max-width: 768px) {
+    /* Navigation adjustments */
+    .navbar-knapper {
+        display: none;
+    }
+    
+    .ham-menu {
+        display: flex;
+    }
+    
+    .off-screen-menu {
+        display: block;
+    }
+
+    /* Content boxes adjustments */
+    .hjem-innhold {
+        grid-template-columns: 1fr;
+        padding: 10px;
+        gap: 20px;
+    }
+
+    .box {
+        padding: 15px;
+    }
+
+    .box .content {
+        padding: 15px;
+    }
+
+    .box h1 {
+        font-size: 1.2rem;
+    }
+
+    /* Header section adjustments */
+    .innhold-hjem-hjem {
+        height: 60vh;
+        margin: 60px auto 30px;
+    }
+
+    .innhold-hjem-hjem h1 {
+        font-size: 2rem;
+    }
+
+    /* Video and slideshow adjustments */
+    .container {
+        margin: 40px auto;
+    }
+
+    #video1 {
+        margin-top: 15vh;
+    }
+
+    /* Section titles */
+    .forventninger h1,
+    .section-title h1 {
+        font-size: 2rem;
+    }
+
+    /* Footer adjustments */
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 30px 15px;
+    }
+
+    .footer div {
+        margin: 10px 0;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .footer img {
+        max-width: 120px;
+    }
+}
+
+/* Additional breakpoint for very small devices */
+@media (max-width: 480px) {
+    .innhold-hjem-hjem h1 {
+        font-size: 1.8rem;
+    }
+
+    .box h1 {
+        font-size: 1.1rem;
+    }
+
+    .box p {
+        font-size: 0.9rem;
+    }
+
+    .container {
+        margin: 30px auto;
+    }
+
+    #video1 {
+        margin-top: 10vh;
+    }
+}
+
+/* About page styles */
+.about-content {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    padding: 40px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+    flex: 2;
+    color: white;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.about-text h3 {
+    font-size: 1.8rem;
+    margin: 25px 0 15px;
+    color: #ddd;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-text ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.about-text li {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+/* Media queries for about page */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .about-image {
+        margin-bottom: 30px;
+    }
+    
+    .about-text h2 {
+        font-size: 2rem;
+    }
+    
+    .about-text h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Section title styling */
+.section-title {
+    text-align: center;
+    margin: 80px auto 40px;
+    padding: 20px;
+}
+
+.section-title h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: white;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}

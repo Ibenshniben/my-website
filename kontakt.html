@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>CV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #pdf-viewer {
+            width: 65vw; /* Bruk viewport-enheter for bredde */
+            max-width: 100%; /* Sørg for at den ikke overstiger 100% bredde */
+            border: 1px solid #ddd;
+            overflow: hidden;
+            border-radius: 25px;
+            margin: 50px auto; /* Sentrer elementet */
+            display: flex;
+            flex-direction: column; /* Vis flere sider vertikalt */
+            justify-content: center; /* Sentrer innholdet */
+            align-items: center; /* Sentrer innholdet vertikalt */
+            padding: 0; /* Fjern padding */
+        }
+        .pdf-page {
+            width: 100%; /* Sørg for at PDF-sidene fyller hele bredden */
+            height: auto; /* Juster høyden automatisk */
+            margin-bottom: 20px; /* Legg til margin mellom sidene */
+        }
+        button {
+            padding: 10px 15px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .footer {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            height: 50vh;
+            color: white;
+            text-decoration: none;
+            background-color: rgb(48, 53, 90);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 100px; /* Øk marginen øverst for å unngå overlapping */
+        }
+        .copy-btn-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px; /* Legg til margin nederst for å unngå overlapping */
+        }
+
+        /* Media queries for mobile devices */
+        @media (max-width: 768px) {
+            #pdf-viewer {
+                width: 90vw; /* Øk bredden for mobilvisning */
+                overflow: auto;
+                margin: 20px auto; /* Juster marginene for mobilvisning */
+            }
+            .pdf-page {
+                width: 100%; /* Sørg for at PDF-sidene fyller hele bredden */
+                height: auto; /* Juster høyden automatisk */
+            }
+            .copy-btn-container {
+                display: flex; /* Sørg for at knappen vises på mobil */
+                justify-content: center;
+                margin-bottom: 20px; /* Juster marginen for mobil */
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+    window.embeddedChatbotConfig = {
+    chatbotId: "naiad_52163utuCIhzYzo",
+    domain: "www.chatbase.co"
+    }
+    </script>
+    <script
+    src="https://www.chatbase.co/embed.min.js"
+    chatbotId="naiad_52163utuCIhzYzo"
+    domain="www.chatbase.co"
+    defer>
+    </script>
+    <nav>   
+        <div class="navbar">
+            <div class="left-navbar">
+                <a href="index.html"><img src="ib-logo-hvit.png" id="logo-navbar"></a>
+            </div>
+            <div class="off-screen-menu">
+                <ul>
+                    <a href="prosjekter.html">Prosjekter</a>
+                    <a href="om-meg.html">Om meg</a>
+                    <a href="kontakt.html">CV</a>
+                </ul>
+            </div>
+            <div class="ham-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="navbar-knapper">
+                <a href="prosjekter.html"><button class="btn btn1">Prosjekter</button></a>
+                <a href="om-meg.html"><button class="btn btn1">Om meg</button></a>
+                <a href="kontakt.html"><button class="btn btn1">CV</button></a>
+            </div>
+        </div>
+    </nav>
+    <div class="innhold-hjem-cv">
+        <h1>CV</h1>
+        <p>Ib Strømsvåg</p>
+    </div>
+    
+    <!-- PDF vises her -->
+    <div id="pdf-viewer"></div>
+
+    <div class="copy-btn-container">
+        <!-- Kopi-knapp -->
+        <button id="copy-btn" class="btn btn1">Kopier CV</button>
+    </div>
+
+    <div class="footer">
+        <div class="footer1">
+            <img src="ib-logo-hvit.png">
+        </div>
+        <div class="footer2">
+            <p>Forfatter: Ib Strømsvåg</p>
+            <p><a href="mailto:ibjulian9@gmail.com">ibjulian9@gmail.com</a></p>
+            <p>Eksempel</p>
+            <p>Eksempel</p>
+            <p>Eksempel</p>
+            <p>Eksempel</p>
+        </div>
+        <div class="footer3">
+            <p>Forfatter: Ib Strømsvåg</p>
+            <p><a href="mailto:ibjulian9@gmail.com">ibjulian9@gmail.com</a></p>
+            <p>Eksempel</p>
+            <p>Eksempel</p>
+            <p>Eksempel</p>
+            <p>Eksempel</p>
+        </div>
+        <div class="footer4">
+            <p>Forfatter: Ib Strømsvåg</p>
+            <p><a href="mailto:ibjulian9@gmail.com">ibjulian9@gmail.com</a></p>
+            <p>Eksempel</p>
+            <p>Eksempel</p>
+            <p>Eksempel</p>
+            <p>Eksempel</p>
+        </div>
+        <div class="footer5">
+            <img src="android-chrome-512x512.png">
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.12.2/intersection-observer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.1/dist/lenis.min.js"></script>
+</body>
+</html>
+
+<style>
+    /* Update existing styles */
+    #pdf-viewer {
+        width: 90%;
+        max-width: 800px;
+        margin: 20px auto;
+    }
+
+    @media (max-width: 768px) {
+        #pdf-viewer {
+            width: 95%;
+            margin: 10px auto;
+        }
+
+        .copy-btn-container {
+            padding: 0 10px;
+        }
+
+        .btn {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .innhold-hjem-cv {
+            padding: 20px;
+        }
+    }
+</style>
